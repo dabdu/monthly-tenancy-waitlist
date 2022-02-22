@@ -1,0 +1,49 @@
+.modal__body {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .close__icon {
+      color: red;
+      font-weight: 600;
+    }
+  }
+
+  .form__main__container {
+    width: 90%;
+    display: flex;
+
+    .form__container {
+      //
+      margin-top: 0 auto;
+    }
+  }
+}
+
+// .btn {
+//   display: inline-block;
+//   margin-top: 1rem;
+//   padding: 0.8rem 3rem;
+//   border-radius: 5rem;
+//   background: var(--gradient);
+//   font-size: 1.7rem;
+//   color: #fff;
+//   cursor: pointer;
+//   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+//   transition: all 0.3s linear;
+// }
+
+.btn:hover {
+  transform: scale(1.1);
+}
