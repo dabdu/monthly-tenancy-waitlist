@@ -117,10 +117,16 @@
     .about__page {
       width: 90vw;
       height: 100vh;
+      margin-top: 20px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow: hidden;
+
+      .about__page__title {
+        padding-top: 100px;
+      }
       .about__page__container {
         display: flex;
         flex-direction: column;
@@ -146,7 +152,7 @@
           }
 
           .landlord__property {
-            margin-top: 90px;
+            margin-top: 10px;
           }
 
           .last__paragraph {
@@ -159,11 +165,7 @@
           right: 100px;
           top: 145px;
           .image__one {
-            width: 100px;
-            height: 100px;
-            img {
-              width: 100%;
-            }
+            display: none;
           }
           .image__two {
             display: none;

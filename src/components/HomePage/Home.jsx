@@ -44,7 +44,7 @@ function Home() {
         <h1 className="heading">
           The Monthly <span className="tenancy__heading">Tenancy</span> 
           
-          <h1 className="heading">Plan</h1>
+          <h1 className="heading__two" >Plan</h1>
         </h1>
         </div>
 

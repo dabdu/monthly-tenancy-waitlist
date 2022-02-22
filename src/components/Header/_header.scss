@@ -56,11 +56,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    // width: 70%;
+    position: relative;
     .logo__container {
       width: 100px;
       height: 100px;
-      padding-top: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
 
       img {
         width: 100%;
@@ -71,7 +74,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 38%;
+      // width: 70%;
+      background-color: green;
+      position: absolute;
+      right: 70px;
+      top: 19px;
 
       a {
         &:hover {
@@ -84,6 +91,7 @@
         list-style: none;
         font-size: 20px;
         color: $secondary-color;
+        margin-left: 20px;
 
         &:hover {
           color: $primary-color;
