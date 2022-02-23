@@ -18,12 +18,10 @@ function AboutPage () {
     <div className="about__page__container">
       <div className="about__page__left">
         <h3>Hello!</h3>
-        <p>
-            The Monthly Tenancy Plan was created to ensure that people not only
-            live in their dream homes, but also pay rent on a monthly basis with
-            ease and without breaking the bank or paying exorbitant charges.
+          <p>
+            The monthly tenancy plan is a property tech platform designed to simplify property rentals, eliminate debts and excess charges, verify tenants and properties, and give access to various services for optimum comfort.
           </p>
-          <p className="landlord__property">
+          {/* <p className="landlord__property">
             Landlords and propety owners can easily list their properties on the
             MTP, enjoy faster fill-up of properties by verified tenants and easily
             manage rent payments, all while ensuring property seekers have easy
@@ -35,7 +33,7 @@ function AboutPage () {
           <p className="last__paragraph">
             Simply put, property rental has just
             become simpler, more affordable and more comfortable.
-          </p>
+          </p> */}
           
         
       </div>

@@ -46,7 +46,54 @@ function TenantForm( { toggleTenantModal }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoading(true); 
+
+   
+
+    
+
+    const errors = [];
+
+      if(!name){
+        errors.push("Please add your name.")
+        toast.error("Please add your name.")
+      }else if(name.length > 20){
+        errors.push("Your name should be less than 20 chars long.")
+        toast.error("Your name should be less than 20 chars long.")
+      }
+    
+      if(!email){
+        errors.push("Please add your email.")
+        toast.error("Please add your email.")
+      }else if( !validateEmail(email)){
+        errors.push("Email format is incorrect.")
+        toast.error("Email format is incorrect.")
+      }
+    
+    
+      if(!phoneNo){
+        errors.push("please add your phone number")
+        toast.error("please add your phone number")}
+      if(!address){
+        errors.push("please add your address")
+        toast.error("please add your address")}
+
+
+
+
+      if(errors.length >= 1){
+        //   toggleTenantModal();
+        // navigate(`/`);
+        setLoading(false);
+          toast.error(errors);
+          return
+      }
+    
+
+
+
+
+
     const formDataCopy = {
       ...formData,
       timestamp: serverTimestamp(),
@@ -63,14 +110,33 @@ function TenantForm( { toggleTenantModal }) {
         console.log(res);
       })
       .catch((err) => console.log(err));
+
+     
+
+
     toast.success("Registration Completed Successfully");
 
     toggleTenantModal();
     navigate(`/`);
+    
+   
   };
   if (loading) {
     return <Spinner />;
   }
+
+
+
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+
+
+
+
   return (
     <>
       <div className="formContainer">
@@ -87,7 +153,6 @@ function TenantForm( { toggleTenantModal }) {
               name="name"
               value={name}
               onChange={handleChange}
-              required
               placeholder="Enter Name"
             />
             <input
@@ -110,7 +175,6 @@ function TenantForm( { toggleTenantModal }) {
               value={email}
               onChange={handleChange}
               name="email"
-              required
               placeholder="Enter Email"
             />
           </div>
@@ -119,13 +183,12 @@ function TenantForm( { toggleTenantModal }) {
               Phone Number<span style={{ color: "red" }}>*</span>
             </label>
             <input
-              type="text"
+              type="number"
               className="form-control custom-input input"
               id="phoneNo"
               name="phoneNo"
               value={phoneNo}
               onChange={handleChange}
-              required
               placeholder="Enter Phone Number"
             />
           </div>
@@ -140,7 +203,6 @@ function TenantForm( { toggleTenantModal }) {
               name="address"
               value={address}
               onChange={handleChange}
-              required
               placeholder="Enter State"
             />
           </div>
@@ -153,8 +215,8 @@ function TenantForm( { toggleTenantModal }) {
               value={property_type}
               onChange={handleChange}
             >
-              <option value="funished">Funished</option>
-              <option value="unfunished">Unfunished</option>
+              <option value="funished">Furnished</option>
+              <option value="unfunished">Unfurnished</option>
             </select>
           </div>
           <div className="form-group">
@@ -187,11 +249,11 @@ function TenantForm( { toggleTenantModal }) {
           </div>
           <br />
           <div className="btn__container">
-            <button id="tenantFormBtn" className="form__submit__btn" >
+            <button id="tenantFormBtn" className=" form__submit__btn " >
               <center>SUBMIT</center>
             </button>
 
-            <button id="ttenantFormBtn" className="form__close__btn" onClick={toggleTenantModal}>
+            <button type="button" id="ttenantFormBtn" className=" form__close__btn" onClick={toggleTenantModal}>
               <center> CLOSE</center>
             </button>
           </div>

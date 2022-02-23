@@ -165,6 +165,10 @@ form {
     margin-right: 20px;
     padding: 8px 15px;
     border-radius: 15px;
+
+    &:hover {
+      opacity: 70%;
+    }
   }
 
   .form__close__btn {
@@ -172,6 +176,10 @@ form {
     margin-right: 20px;
     padding: 8px 15px;
     border-radius: 15px;
+
+    &:hover {
+      opacity: 70%;
+    }
   }
 }
 
